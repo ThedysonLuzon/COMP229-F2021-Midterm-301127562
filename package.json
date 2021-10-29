@@ -1,5 +1,5 @@
 {
-  "name": "comp229-f2020-midterm",
+  "name": "comp229-f2021-midterm-301127562",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -45,17 +45,17 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ThedysonLuzon/COMP229-F2021-Midterm-301127562.git"
   },
   "keywords": [
     "NodeJS",
     "ExpressJS",
     "EJS"
   ],
-  "author": "Thedyson L",
+  "author": "Thedyson Luzon",
   "license": "ISC",
   "bugs": {
     "url": ""
   },
-  "homepage": ""
+  "homepage": "https://comp229-f2021-midterm-30112756.herokuapp.com/"
 }

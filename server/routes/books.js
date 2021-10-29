@@ -63,6 +63,7 @@ router.get('/:id', (req, res, next) => {
         res.end(err);
       }else
       {
+        // show edit view
         res.render( '../views/books/details', {
           title: 'Update Current Book', books: books
         });
@@ -86,6 +87,7 @@ router.post('/:id', (req, res, next) => {
           console.log(err);
           res.end(err);
         }else{
+          // refresh book list
           res.redirect('/books');
         }
       });
@@ -102,6 +104,7 @@ router.get('/delete/:id', (req, res, next) => {
         console.loog(err);
         res.end(err);
       }else{
+        // refresh book list
         res.redirect('/books');
       }
     })
