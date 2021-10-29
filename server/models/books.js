@@ -1,3 +1,5 @@
+// books.js, Thedyson Luzon, 301127562, Favourite Book List
+
 let mongoose = require('mongoose');
 
 // create a model class

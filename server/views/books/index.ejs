@@ -5,9 +5,8 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <h3>Favourite Books List </h3>
-          <!-- ------------------------ -->
-          <!-- FIX THE ADD BUTTON BELOW -->
-          <!-- ------------------------ -->
+
+          <!-- Fixed add button -->
           <a href="/books/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <br>
           <div class="table-responsive">
@@ -27,16 +26,22 @@
                 <% for (let count = 0; count < books.length; count++) { %>
                 <tr>
                   <td><%= books[count].Title %></td>
-                  <td class="text-center">$<%= books[count].Price %></td>
-                  <td class="text-center"><%= books[count].Author %></td>
-                  <td class="text-center"><%= books[count].Genre %></td>
-
                   <td class="text-center">
-                  <a href="/details/<%= books[count]._id %>" class="btn btn-primary"><i class="fa fa-plus"></i> Edit a book</a>                    
+                    $<%= books[count].Price %>
+                  </td>
+                  <td class="text-center">
+                    <%= books[count].Author %>
+                  </td>
+                  <td class="text-center">
+                    <%= books[count].Genre %>
                   </td>
 
                   <td class="text-center">
-                  <a href="/details/<%= books[count]._id %>" class="btn btn-primary"><i class="fa fa-plus"></i> Delete a book</a>                    
+                  <a href="/books/<%= books[count].id %>" class="btn btn-primary"><i class="fa fa-plus"></i> Edit a book</a>                    
+                  </td>
+
+                  <td class="text-center">
+                  <a href="/books/delete/<%= books[count].id %>" class="btn btn-primary"><i class="fa fa-plus"></i> Delete a book</a>                    
                   </td>
                 </tr>
                 <% } %>
