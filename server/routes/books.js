@@ -54,22 +54,24 @@ router.post('/add', (req, res, next) => {
 // GET the Book Details page in order to edit an existing Book
 router.get('/:id', (req, res, next) => {
 
-    let id = req.params.id;
+  let id = req.params.id;
 
-    book.findById(id, (err, books) => {
+  book.findById(id, (err, books) => {
       if(err)
       {
-        console.log(err);
-        res.end(err);
-      }else
-      {
-        // show edit view
-        res.render( '../views/books/details', {
-          title: 'Update Current Book', books: books
-        });
+          console.log(err);
+          res.end(err);
       }
-    })
-  });
+      else{
+          res.render
+          (
+              '../views/books/details',
+              {title: 'Update Current Book', books: books}
+          );
+      }
+  })
+
+});
 
 // POST - process the information passed from the details form and update the document
 router.post('/:id', (req, res, next) => {
@@ -77,20 +79,23 @@ router.post('/:id', (req, res, next) => {
     let id = req.params.id;
 
     let updatedBook = book({
-      "Title": req.body.Title,         
-      "Price": req.body.Price,         
-      "Author": req.body.Author,         
-      "Genre": req.body.Genre });  
-      books.updateOne({_id: id}, updatedBook, (err) => {
-        if(err)
-        {
+      "_id": id,
+      "Title": req.body.Title,
+      "Price": req.body.Price,
+      "Author": req.body.Author,
+      "Genre": req.body.Genre
+  });
+  book.updateOne({_id: id}, updatedBook, (err) => {
+      if(err)
+      {
           console.log(err);
           res.end(err);
-        }else{
-          // refresh book list
+      }
+      else{
           res.redirect('/books');
-        }
-      });
+      }
+  });
+
 });
 
 // GET - process the delete by user id
@@ -104,7 +109,6 @@ router.get('/delete/:id', (req, res, next) => {
         console.loog(err);
         res.end(err);
       }else{
-        // refresh book list
         res.redirect('/books');
       }
     })
